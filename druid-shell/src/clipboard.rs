@@ -160,6 +160,13 @@ impl Clipboard {
     pub fn get_format(&self, format: FormatId) -> Option<Vec<u8>> {
         self.0.get_format(format)
     }
+
+    /// For debugging: print the resolved identifiers for each type currently
+    /// on the clipboard.
+    #[doc(hidden)]
+    pub fn available_type_names(&self) -> Vec<String> {
+        self.0.available_type_names()
+    }
 }
 
 /// A type identifer for the system clipboard.
